@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_ui/data/productList.dart';
-import 'package:shopping_ui/ui/homePage.dart';
 import '../const.dart';
 
 class ProductDetail extends StatefulWidget {
@@ -32,55 +31,6 @@ class _ProductDetailState extends State<ProductDetail> {
             IconButton(onPressed: (){}, icon: Icon(Icons.favorite, color: kPurple),),
           ],
         ),
-        bottomSheet:
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(width: 10,),
-                      Card(
-                        color: kPurple,
-                        child: Padding(
-                          padding: EdgeInsets.all(5),
-                          child: Icon(Icons.favorite, color: Colors.white, size: 25,),
-                      )
-                      ),
-                      ButtonTheme(
-                       height: 55,
-                       minWidth: 200,
-                       child: RaisedButton(
-                         shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.only(
-                             topLeft: Radius.circular(16.0),
-                             bottomLeft: Radius.circular(16.0),
-                           ),
-                         ),
-                        color: kYellow,
-                          child: Text('Add to cart', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                          onPressed: (){
-                           print(index);
-                           Navigator.of(context).push(MaterialPageRoute(builder:(context)=> HomePage(index, number))); }
-                          ), ),
-                    ],
-                  ),
-                  width: double.infinity,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16.0),
-                      topRight: Radius.circular(16.0),
-                    ),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 1.0,
-                        spreadRadius: 0.0,
-                        offset: Offset(0.0, 0.0), // shadow direction: bottom right
-                      )
-                    ],
-                  ),
-                ),
         body: SingleChildScrollView(
              child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -147,6 +97,55 @@ class _ProductDetailState extends State<ProductDetail> {
                 SizedBox(height: 80,)
               ],
             ),
+          ),
+        ),
+        bottomSheet:
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(width: 10,),
+              Card(
+                  color: kPurple,
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Icon(Icons.favorite, color: Colors.white, size: 25,),
+                  )
+              ),
+              ButtonTheme(
+                height: 55,
+                minWidth: 200,
+                child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.0),
+                        bottomLeft: Radius.circular(16.0),
+                      ),
+                    ),
+                    color: kYellow,
+                    child: Text('Add to cart', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                    onPressed: (){
+                      Navigator.pop(context,index);
+                    }
+                ), ),
+            ],
+          ),
+          width: double.infinity,
+          height: 80,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(16.0),
+              topRight: Radius.circular(16.0),
+            ),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 1.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), // shadow direction: bottom right
+              )
+            ],
           ),
         ),
       ),

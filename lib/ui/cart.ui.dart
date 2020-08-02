@@ -6,11 +6,6 @@ import 'dart:collection';
 
 class Cart extends StatefulWidget {
 
-  Cart(this.index, this.number);
-
-  final int index ;
-  final int number ;
-
   @override
   _CartState createState() => _CartState();
 }
@@ -21,8 +16,6 @@ class _CartState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
-
-    if(widget.number != null ) number =  widget.number;
 
     cartList = LinkedHashSet<int>.from(cartList).toList();
 

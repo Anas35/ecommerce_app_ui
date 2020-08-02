@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shopping App Ui',
-      home: HomePage(null, 1),
+      home: HomePage(),
     );
   }
 }
