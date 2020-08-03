@@ -4,8 +4,8 @@ import '../const.dart';
 
 class ProductDetail extends StatefulWidget {
 
-  ProductDetail(this.num);
-  final int num;
+  ProductDetail(this.index);
+  final int index;
 
   @override
   _ProductDetailState createState() => _ProductDetailState();
@@ -13,12 +13,12 @@ class ProductDetail extends StatefulWidget {
 
 class _ProductDetailState extends State<ProductDetail> {
 
-  int number = 1;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
 
-    int index = widget.num;
+    int index = widget.index;
 
     return SafeArea(
       child: Scaffold(
@@ -70,17 +70,17 @@ class _ProductDetailState extends State<ProductDetail> {
                                       child: Text('-', style: kBoldText,),
                                       onTap: (){
                                          setState(() {
-                                            if(number > 1) number--;
+                                            if(quantity > 1) quantity--;
                                           });},
                                   ),
                                   Padding(
                                       padding: EdgeInsets.symmetric(horizontal: 12),
-                                      child: Text(number.toString(), style: kBoldText,)),
+                                      child: Text(quantity.toString(), style: kBoldText,)),
                                   GestureDetector(
                                       child: Text(' + ', style: kBoldText,),
                                     onTap: (){
                                       setState(() {
-                                        if(number >= 1) number++;
+                                        if(quantity >= 1) quantity++;
                                       });},
                                   ),
                                 ],
@@ -125,6 +125,9 @@ class _ProductDetailState extends State<ProductDetail> {
                     color: kYellow,
                     child: Text('Add to cart', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                     onPressed: (){
+                      setState(() {
+                        product[index].quantity = quantity;
+                      });
                       Navigator.pop(context,index);
                     }
                 ), ),
