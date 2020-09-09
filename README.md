@@ -1,16 +1,11 @@
-# shopping_ui
+# What's this?
 
-A new Flutter application.
+Shopping Ui is a clone of E-Commerce App Ui Design by [Tasin](https://dribbble.com/shots/6497439-eCommerce-App-Design-UI).
 
-## Getting Started
+# Screenshots
 
-This project is a starting point for a Flutter application.
+![combine_images](https://user-images.githubusercontent.com/65850618/92620860-c3375180-f2e0-11ea-9a0b-66cafe7461ad.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+# Credits
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+UI Design - [Tasin](https://dribbble.com/shots/6497439-eCommerce-App-Design-UI)
