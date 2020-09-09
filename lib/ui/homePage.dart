@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Expanded(
               child: GridView.count(
-                childAspectRatio: 0.68,
+                childAspectRatio: 0.65,
                 shrinkWrap: true,
                 crossAxisCount: 2,
                 children: List.generate(
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                                       children: <Widget>[
                                         SizedBox(height: 15),
                                         AspectRatio(
-                                            aspectRatio: 18 / 8,
+                                            aspectRatio: 10 / 8,
                                             child:
                                                 Image.asset(product[index].photo)),
                                         SizedBox(

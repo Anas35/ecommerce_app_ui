@@ -48,7 +48,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     fontSize: 30
                 ),),
                 SizedBox(height: 10,),
-                Text(product[index].gram.toString() + 'g', style: TextStyle(color: Colors.grey[400]),),
+                Text(product[index].gram.toString() + 'g', style: TextStyle(color: Colors.grey[800]),),
                       SizedBox(height: 20,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -58,26 +58,25 @@ class _ProductDetailState extends State<ProductDetail> {
                           Container(
                             padding: EdgeInsets.all(12),
                             height: 45,
-                            width: 80,
+                            width: 120,
                             decoration: BoxDecoration(
                               color: Colors.white,
                                 borderRadius: BorderRadius.circular(18.0),
                                 border: Border.all(color: Colors.grey[400]),
                             ),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   GestureDetector(
-                                      child: Text('-', style: kBoldText,),
+                                      child: Icon(Icons.remove),
                                       onTap: (){
                                          setState(() {
                                             if(quantity > 1) quantity--;
                                           });},
                                   ),
-                                  Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 12),
-                                      child: Text(quantity.toString(), style: kBoldText,)),
+                                  Text(quantity.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                                   GestureDetector(
-                                      child: Text(' + ', style: kBoldText,),
+                                      child: Icon(Icons.add),
                                     onTap: (){
                                       setState(() {
                                         if(quantity >= 1) quantity++;
@@ -93,7 +92,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 Text('About this Product',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 SizedBox(height: 10,),
                 Text('Healthy plant-based foods, snacks & meal replacements. Best organic plant based protein bars, shakes and powders. Nothing artificial.',
-                style: TextStyle(height: 1.5)),
+                style: TextStyle(height: 1.5, color: Colors.grey[800], fontSize: 18)),
                 SizedBox(height: 80,)
               ],
             ),
