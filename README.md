@@ -4,7 +4,7 @@ Shopping Ui is a clone of E-Commerce App Ui Design by [Tasin](https://dribbble.c
 
 # Screenshots
 
-![combine_images](https://user-images.githubusercontent.com/65850618/92620860-c3375180-f2e0-11ea-9a0b-66cafe7461ad.jpg)
+![combine_images (1)](https://user-images.githubusercontent.com/65850618/92675472-21921d80-f33d-11ea-9af1-c65b28f43d54.jpg)
 
 # Credits
 
