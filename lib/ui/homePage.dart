@@ -8,16 +8,13 @@ import 'dart:collection';
 List cartList = [];
 
 class HomePage extends StatefulWidget {
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     cartList = LinkedHashSet<int>.from(cartList).toList();
 
     return SafeArea(
@@ -37,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                   Icons.favorite,
                   color: kPurple,
                 ),
-                onPressed: () {})
+                onPressed: () {}),
           ],
         ),
         body: Column(
@@ -48,65 +45,85 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 crossAxisCount: 2,
                 children: List.generate(
-                  6,
+                  product.length,
                   (index) => GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ProductDetail(index))).then((value) {
-                              setState(() {
-                                if (value != null)
-                                cartList.add(value);
-                              });
-                        }
-                        );
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(
+                                builder: (context) => ProductDetail(index)))
+                            .then((value) {
+                          setState(() {
+                            if (value != null) cartList.add(value);
+                          });
+                        });
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 4, horizontal: 5),
                         child: Column(
                           children: [
-                            if(index.isOdd) SizedBox(height: 20,),
+                            index.isOdd
+                                ? SizedBox(
+                                    height: 20,
+                                  )
+                                : SizedBox(
+                                    height: 0,
+                                  ),
                             Card(
                               child: Padding(
-                                  padding: EdgeInsets.all(10),
-                                  child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(height: 15),
-                                        AspectRatio(
-                                            aspectRatio: 10 / 8,
-                                            child:
-                                                Image.asset(product[index].photo)),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Text(
-                                            '\uFF04' +
-                                                product[index].cost.toString(),
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20)),
-                                        SizedBox(height: 10),
-                                        Text(product[index].name, style: kBoldText),
-                                        SizedBox(height: 10),
-                                        Text(
-                                          product[index].gram.toString() + 'g',
-                                          style: TextStyle(color: Colors.grey[400]),
-                                        )
-                                      ])),
+                                padding: EdgeInsets.all(10),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      SizedBox(height: 15),
+                                      AspectRatio(
+                                          aspectRatio: 10 / 8,
+                                          child: Image.asset(
+                                              product[index].photo)),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                          '\uFF04' +
+                                              product[index].cost.toString(),
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20)),
+                                      SizedBox(height: 10),
+                                      Text(product[index].name,
+                                          style: kBoldText),
+                                      SizedBox(height: 10),
+                                      Text(
+                                        product[index].gram.toString() + 'g',
+                                        style:
+                                            TextStyle(color: Colors.grey[800]),
+                                      ),
+                                    ]),
+                              ),
                             ),
+                            index == product.length - 2
+                                ? SizedBox(
+                                    height: 20,
+                                  )
+                                : SizedBox(
+                                    height: 0,
+                                  ),
                           ],
                         ),
                       )),
                 ),
               ),
             ),
-            SizedBox(height: 80,)
+            SizedBox(
+              height: 80,
+            )
           ],
         ),
-        bottomSheet:  GestureDetector(
+        bottomSheet: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Cart()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Cart()));
             },
             child: Container(
               height: 80,
@@ -131,10 +148,13 @@ class _HomePageState extends State<HomePage> {
                             scrollDirection: Axis.horizontal,
                             children: cartList.length == null
                                 ? Text('')
-                                : cartList.map((i) =>  Card(
-                                child: Padding(
-                                    padding: EdgeInsets.all(5),child: Image.asset(product[i].photo)))).toList()
-                        )),
+                                : cartList
+                                    .map((i) => Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(5),
+                                            child:
+                                                Image.asset(product[i].photo))))
+                                    .toList())),
                     SizedBox(
                       width: 10,
                     ),
@@ -158,4 +178,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
