@@ -1,10 +1,9 @@
 # What's this?
 
-Shopping Ui is a clone of E-Commerce App Ui Design by [Tasin](https://dribbble.com/shots/6497439-eCommerce-App-Design-UI).
+E-Commerce App of dummy data is created with Flutter and with UI reference from E-Commerce App Ui Design by [Tasin](https://dribbble.com/shots/6497439-eCommerce-App-Design-UI). 
 
 # Screenshots
-
-![combine_images (1)](https://user-images.githubusercontent.com/65850618/92675472-21921d80-f33d-11ea-9af1-c65b28f43d54.jpg)
+![ecommerce_ui_app](https://user-images.githubusercontent.com/65850618/132133314-8641eada-45bc-4628-abbd-1e13cfb19fc6.jpg)
 
 # Credits
 
