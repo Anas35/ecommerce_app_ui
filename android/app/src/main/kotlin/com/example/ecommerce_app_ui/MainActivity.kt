@@ -1,4 +1,4 @@
-package com.anas.shopping_ui
+package com.example.ecommerce_app_ui
 
 import io.flutter.embedding.android.FlutterActivity
 
